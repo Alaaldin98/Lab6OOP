@@ -14,8 +14,8 @@ Double click on the Lab06-OOPPrinciples directory.
 Then select and open Lab06-OOPPrinciples.sln
 
 #### Visuals
-UML
-
+###### UML
+![Screenshot (44)](https://user-images.githubusercontent.com/98964675/162163170-80c1c4da-236f-4d4d-a1e3-db930c0dca79.png)
 
 ### OOP Principles
 ##### Inheritance
