@@ -90,7 +90,7 @@ namespace Zoo
         }
     }
 
-    public abstract class Cat : Mammal
+    public abstract class Cat : Mammal, IHunt
     {
         public string Prey { get => Diet; }
         virtual public void Pounce(string targetId)
@@ -136,7 +136,7 @@ namespace Zoo
         }
     }
 
-    public abstract class Owl : Bird
+    public abstract class Owl : Bird, IHunt, IFly
     {
         override public bool Nocturnal { get; set; } = true;
         public string Prey { get => Diet; }
@@ -167,7 +167,7 @@ namespace Zoo
     {
 
     }
-    public class PolarBear : Bear
+    public class PolarBear : Bear, IHunt
     {
         public override string Identity { get; set; }
         public override string Sex { get; set; }
@@ -203,7 +203,7 @@ namespace Zoo
         public override bool ColdBlooded { get; set; } = true;
     }
 
-    public abstract class Snake : Reptile
+    public abstract class Snake : Reptile, IHunt
     {
         public string Prey { get => Diet; }
         public abstract void Slither();
@@ -236,7 +236,7 @@ namespace Zoo
         }
     }
 
-    public abstract class Eagle : Bird
+    public abstract class Eagle : Bird, IHunt, IFly
     {
         public string Prey { get => Diet; }
         public bool SmellForPrey()
@@ -297,6 +297,18 @@ namespace Zoo
             Console.WriteLine("EEE ee E eeee");
         }
     }
-    
+    interface IFly
+    {
+        int TopFlySpeed { get; set; }
+        int TakeOff();
+        bool Land();
+    }
+    interface IHunt
+    {
+        string Prey { get; }
+        bool SmellForPrey() { throw new NotImplementedException("SmellForPrey method not correctly implemented."); }
+        bool CatchPrey() { throw new NotImplementedException("CatchPrey method not correctly implemented."); }
+    }
+
 
 }
